@@ -1,6 +1,5 @@
 package View.Library;
 
-import Controller.Library.Service.Library.LibrarianService;
 import Controller.Library.Service.Library.LibraryService;
 import Object.Library.Book;
 
@@ -20,61 +19,54 @@ public class LibrarianScreen {
         System.out.print("Please enter book abstract : ");
         String abstracts = scanner.nextLine();
         String[] bookValue = {name, category, author, abstracts};
-        LibrarianService.addBook(bookValue);
+        LibraryService.addBook(bookValue);
     }
 
     public static void removeDisplay() {
         String bookValue = inputBook();
-        LibrarianService.removeBook(bookValue);
+        LibraryService.removeBook(bookValue);
     }
 
     public static void searchDisplay() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your search type");
         System.out.println("1 - Search by name\n2 - Search by Category\n3 - Search by Code");
-        LibrarianService.searchBookLibProperty(scanner.nextLine());
+        LibraryService.searchBookProperty(scanner.nextLine());
     }
 
     public static void searchNameLibDisplay() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your book name to search : ");
-        LibrarianService.searchByName(scanner.nextLine());
+        LibraryService.searchByName(scanner.nextLine());
     }
 
     public static void searchCateLibDisplay() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your book category to search : ");
-        LibrarianService.searchByCategory(scanner.nextLine());
+        LibraryService.searchByCategory(scanner.nextLine());
     }
 
     public static void searchCodeLibDisplay() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your book code to search : ");
-        LibrarianService.searchByCode(scanner.nextLine());
+        LibraryService.searchByCode(scanner.nextLine());
     }
 
-    public static void searchShow() {
-        System.out.println("==========================");
-        System.out.println("Book Name   : " + service.getBookDetail().getBookName());
-        System.out.println("Book Type   : " + service.getBookDetail().getBookCategory());
-        System.out.println("Book Code   : " + service.getBookDetail().getBookCode());
-        System.out.println("Book Status : " + service.getBookDetail().getBookStatus());
-        service.setBookDetail(null);
-    }
+
 
     public static void checkDisplay() {
-        LibrarianService.checkBook();
+        LibraryService.checkBook();
     }
 
     public static void historyDisplay() {
-        LibrarianService.historyBook();
+        LibraryService.historyBook();
     }
 
     public static void sortDisplay() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please use sorting function");
         System.out.println("1 - Sort by Name\n2 - Sort by Category\n3 - Sort by Serial\n4 - Sort by Status");
-        LibrarianService.sortBook(scanner.nextLine());
+        LibraryService.sortBook(scanner.nextLine());
     }
 
     public static void sortShow() {
@@ -87,22 +79,22 @@ public class LibrarianScreen {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your property");
         System.out.println("1 - Approve\t2 - Accept");
-        LibrarianService.confirmBook(scanner.nextLine());
+        LibraryService.confirmBook(scanner.nextLine());
     }
 
     public static void approveDisplay() {
         String bookCode = inputBook();
-        LibrarianService.approveBook(bookCode);
+        LibraryService.approveBook(bookCode);
     }
 
     public static void accpetDisplay() {
         String bookCode = inputBook();
-        LibrarianService.acceptBook(bookCode);
+        LibraryService.acceptBook(bookCode);
     }
 
     public static void changeDisplay() {
         String bookCode = inputBook();
-        LibrarianService.changeBook(bookCode);
+        LibraryService.changeBook(bookCode);
     }
 
     public static int changeLibDate() {
@@ -119,7 +111,6 @@ public class LibrarianScreen {
 
     public static void notFoundBook(){
         System.out.println("Your book it doesn't exist");
-        MainScreen.librarianScreen();
     }
 
 }

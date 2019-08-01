@@ -1,6 +1,5 @@
 package View.Library;
 
-import Controller.Library.Service.Library.CustomerService;
 import Controller.Library.Service.Library.LibraryService;
 
 import java.util.Scanner;
@@ -12,44 +11,44 @@ public class CustomerScreen {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your search type");
         System.out.println("1 - Search by name\n2 - Search by Category\n3 - Search by Code");
-        CustomerService.searchBookCusProperty(scanner.nextLine());
+        LibraryService.searchBookProperty(scanner.nextLine());
     }
 
     public static void searchNameCusDisplay() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your book name to search : ");
-        CustomerService.searchByName(scanner.nextLine());
+        LibraryService.searchByName(scanner.nextLine());
     }
 
     public static void searchCateCusDisplay() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your book category to search : ");
-        CustomerService.searchByCategory(scanner.nextLine());
+        LibraryService.searchByCategory(scanner.nextLine());
     }
 
     public static void searachCodeCusDisplay() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your book code to search : ");
-        CustomerService.searchByCode(scanner.nextLine());
+        LibraryService.searchByCode(scanner.nextLine());
     }
 
     public static void checkDisplay() {
-        CustomerService.checkBook();
+        LibraryService.checkBook();
     }
 
     public static void borrowDisplay() {
         String bookCode = inputBook();
-        CustomerService.borrowBook(bookCode);
+        LibraryService.borrowBook(bookCode);
     }
 
     public static void returnDisplay() {
         String bookCode = inputBook();
-        CustomerService.returnBook(bookCode);
+        LibraryService.returnBook(bookCode);
     }
 
     public static void changeDisplay() {
         String bookCode = inputBook();
-        CustomerService.changeBook(bookCode);
+        LibraryService.changeBook(bookCode);
     }
 
     public static int changeCusDate() {

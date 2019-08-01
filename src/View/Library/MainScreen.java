@@ -1,13 +1,13 @@
 package View.Library;
 
-import Controller.Library.Service.Library.CustomerService;
-import Controller.Library.Service.Library.LibrarianService;
 import Controller.Library.Service.Library.LibraryService;
 import Controller.Library.Service.Library.LoginService;
 
 import java.util.Scanner;
 
 public class MainScreen {
+    private static LibraryService service = LibraryService.getInstance();
+    
     public static void homeScreen(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select your property");
@@ -38,7 +38,7 @@ public class MainScreen {
         System.out.println("What do you want to do ?");
         System.out.println("1 - Add Book\t2 - Delete Book\t3 - Search\n4 - Check\t\t" +
                 "5 - History \t6 - Sort\n7 - Confirm\t\t8 - Change\t\t9 - Back\n0 - Exit");
-        LibrarianService.librarianProperty(scanner.nextLine());
+        LibraryService.librarianProperty(scanner.nextLine());
 
     }
     public static void customerScreen(){
@@ -47,7 +47,7 @@ public class MainScreen {
         System.out.println("What do you want to do ?");
         System.out.println("1 - Search\t2 - Check\t3 - Borrow\n4 - Return\t5 - Change\t6 - Back" +
                 "\n0 - Exit");
-        CustomerService.customerProperty(scanner.nextLine());
+        LibraryService.customerProperty(scanner.nextLine());
     }
 
     public static String[] loginTemplate(){
@@ -60,6 +60,14 @@ public class MainScreen {
         return account;
     }
 
+    public static void searchShow() {
+        System.out.println("==========================");
+        System.out.println("Book Name   : " + service.getBookDetail().getBookName());
+        System.out.println("Book Type   : " + service.getBookDetail().getBookCategory());
+        System.out.println("Book Code   : " + service.getBookDetail().getBookCode());
+        System.out.println("Book Status : " + service.getBookDetail().getBookStatus());
+        service.setBookDetail(null);
+    }
 
     // Exit
     public static void exitCase() {
