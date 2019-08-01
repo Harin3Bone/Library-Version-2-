@@ -274,7 +274,6 @@ public class LibraryService {
             if (book.getBookName().equalsIgnoreCase(bookName)) {
                 service.setBookDetail(book);
                 MainScreen.searchShow();
-                
             }
         }
     }
@@ -563,5 +562,4 @@ public class LibraryService {
             MainScreen.errorCase();
         }
     }
-
 }
