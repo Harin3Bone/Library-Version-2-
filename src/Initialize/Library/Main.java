@@ -14,19 +14,19 @@ public class Main {
 
         LibrarianList librarians = new LibrarianList();         // Create librarian list gl_Object
         librarians.DataLibrarianList(librarians);               // Add data to librarian list
-        service.setLibrarianListDetail(librarians);               // Add list to service
+        service.setLibrarianListDetail(librarians);             // Add list to service
 
         CustomerList customers = new CustomerList();            // Create customer list gl_Object
         customers.DataCustomerList(customers);                  // Add data to customer list
-        service.setCustomerListDetail(customers);                 // Add list to service
+        service.setCustomerListDetail(customers);               // Add list to service
 
         BookList books = new BookList();                        // Create book list gl_Object
         books.DataBookList(books);                              // Add data to book list
-        service.setBookListDetail(books);                         // Add list to service
+        service.setBookListDetail(books);                       // Add list to service
 
         HistoryList histories = new HistoryList();              // Create history list gl_Object
         histories.DataHistoryList(histories);                   // Add data to history list
-        service.setHistoryListDetail(histories);                 // Add list to service
+        service.setHistoryListDetail(histories);                // Add list to service
 
         MainScreen.homeScreen();
     }

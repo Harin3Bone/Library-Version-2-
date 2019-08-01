@@ -12,8 +12,7 @@ public class MainScreen {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select your property");
         System.out.println("1 - Login\t2 - register\t3 - Exit");
-        String answer = scanner.nextLine();
-        LoginService.ansProperty(answer);
+        LoginService.ansProperty(scanner.nextLine());
     }
     
     public static void loginChoice(){
@@ -23,14 +22,23 @@ public class MainScreen {
         LoginService.ansLogin(scanner.nextLine());
     }
 
+    public static void librarianLoginView(){
+        String account[] = loginTemplate();
+        LoginService.librarianLogin(account[0],account[1]);
+    }
+
+    public static void customerLoginView(){
+        String account[] = loginTemplate();
+        LoginService.customerLogin(account[0],account[1]);
+    }
+
     public static void librarianScreen(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("================================");
         System.out.println("What do you want to do ?");
         System.out.println("1 - Add Book\t2 - Delete Book\t3 - Search\n4 - Check\t\t" +
                 "5 - History \t6 - Sort\n7 - Confirm\t\t8 - Change\t\t9 - Back\n0 - Exit");
-        String property = scanner.nextLine();
-        LibrarianService.librarianProperty(property);
+        LibrarianService.librarianProperty(scanner.nextLine());
 
     }
     public static void customerScreen(){
@@ -41,6 +49,17 @@ public class MainScreen {
                 "\n0 - Exit");
         CustomerService.customerProperty(scanner.nextLine());
     }
+
+    public static String[] loginTemplate(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("ID : ");
+        String id = scanner.nextLine();
+        System.out.print("Password : ");
+        String ps = scanner.nextLine();
+        String account[] = {id,ps};
+        return account;
+    }
+
 
     // Exit
     public static void exitCase() {

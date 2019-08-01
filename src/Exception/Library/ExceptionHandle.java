@@ -7,4 +7,8 @@ public class ExceptionHandle {
         System.out.println("Error, your category doesn't exist");
         MainScreen.homeScreen();
     }
+
+    public static void exceptionMisMatch(){
+
+    }
 }

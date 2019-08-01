@@ -1,9 +1,7 @@
 package Controller.Library.Service.Library;
 
-import Initialize.Library.Main;
 import Object.Library.Customer;
 import Object.Library.Librarian;
-import View.Library.LoginScreen;
 import View.Library.MainScreen;
 import View.Library.RegisterScreen;
 
@@ -28,10 +26,10 @@ public class LoginService {
     public static void ansLogin(String answer){
         switch (answer){
             case "1":
-                LoginScreen.librarianLoginView();
+                MainScreen.librarianLoginView();
                 break;
             case "2":
-                LoginScreen.customerLoginView();
+                MainScreen.customerLoginView();
                 break;
             case "3":
                 MainScreen.homeScreen();
