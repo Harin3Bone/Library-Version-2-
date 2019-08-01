@@ -63,17 +63,5 @@ public class CustomerScreen {
         return scanner.nextLine();
     }
 
-    public static void notFoundBook(){
-        System.out.println("Your book it doesn't exist");
-        MainScreen.customerScreen();
-    }
 
-    public static void searchCusShow() {
-        System.out.println("==========================");
-        System.out.println("Book Name   : " + service.getBookDetail().getBookName());
-        System.out.println("Book Type   : " + service.getBookDetail().getBookCategory());
-        System.out.println("Book Code   : " + service.getBookDetail().getBookCode());
-        System.out.println("Book Status : " + service.getBookDetail().getBookStatus());
-        service.setBookDetail(null);
-    }
 }

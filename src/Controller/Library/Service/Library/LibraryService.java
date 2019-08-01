@@ -439,7 +439,7 @@ public class LibraryService {
                     historyAdd(null);
                     // Display book borrow detail
                     System.out.println("User : " + service.getCustomerDetail().getFirstName());
-                    CustomerScreen.searchCusShow();
+                    MainScreen.searchShow();
                     System.out.println("Your work has been successful\n");
                 } else {
                     found = false;
@@ -472,7 +472,7 @@ public class LibraryService {
 
                     }
                     // Display book return detail
-                    CustomerScreen.searchCusShow();
+                    MainScreen.searchShow();
                     System.out.println("Your work has been successful");
                 } else {
                     found = false;
@@ -549,7 +549,7 @@ public class LibraryService {
 
     private static void bookFoundCheck(Boolean found) {
         if (!found) {
-            LibrarianScreen.notFoundBook();
+            MainScreen.notFoundBook();
         }
     }
 

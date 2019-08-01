@@ -60,6 +60,10 @@ public class MainScreen {
         return account;
     }
 
+    public static void notFoundBook(){
+        System.out.println("Your book it doesn't exist");
+    }
+
     public static void searchShow() {
         System.out.println("==========================");
         System.out.println("Book Name   : " + service.getBookDetail().getBookName());
