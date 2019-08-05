@@ -95,49 +95,5 @@ public class Book {
                 " | bookStatus = " + bookStatus;
     }
 
-    public static Comparator<Book> bookNameCompare = new Comparator<Book>() {
-        @Override
-        public int compare(Book o1, Book o2) {
-            String BookName1 = o1.getBookName().toUpperCase();
-            String BookName2 = o2.getBookName().toUpperCase();
-            return BookName1.compareTo(BookName2);
-        }
-    };
 
-    public static Comparator<Book> bookCategoryCompare = new Comparator<Book>() {
-        @Override
-        public int compare(Book o1, Book o2) {
-            String BookCategory1 = o1.getBookCategory().toString();
-            String BookCategory2 = o2.getBookCategory().toString();
-            return BookCategory1.compareTo(BookCategory2);
-        }
-    };
-
-    public static Comparator<Book> bookCodeCompare = new Comparator<Book>() {
-        @Override
-        public int compare(Book o1, Book o2) {
-            String BookCode1 = o1.getBookCode().toUpperCase();
-            String BookCode2 = o2.getBookCode().toUpperCase();
-            return BookCode1.compareTo(BookCode2);
-        }
-    };
-
-    public static Comparator<Book> bookStatusCompare = new Comparator<Book>() {
-        @Override
-        public int compare(Book o1, Book o2) {
-            BookStatus BookStat1 = o1.getBookStatus();
-            BookStatus BookStat2 = o2.getBookStatus();
-            return BookStat1.compareTo(BookStat2);
-        }
-    };
-
-    // Interger comparator
-//    public static Comparator<Book> bookCodeCompare = new Comparator<Book>() {
-//        @Override
-//        public int compare(Book o1, Book o2) {
-//            int BookCode1 = o1.getCode();
-//            int BookCode2 = o2.getCode();
-//            return BookCode1-BookCode2;  -> use when compare int
-//        }
-//    };
 }
